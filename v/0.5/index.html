@@ -1,0 +1,3040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Digital Construction Materials</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+    <style>
+        #pylode {
+            position: fixed;
+            top: 130px;
+            left: -60px;
+            font-size: small;
+            transform: rotate(-90deg);
+            color: grey;
+        }
+        #pylode a {
+            font-size: 2em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #005A9C;
+        }
+        #pylode a:hover {
+            color: #333;
+        }
+
+        .cardinality {
+            font-style: italic;
+            color: #aa00aa;
+        }
+
+        dt {
+            font-weight: bold;
+            padding: 5px 0 5px 0;
+        }
+
+        ul.hlist {
+            list-style-type: none;
+            border: 1px solid navy;
+            padding:5px;
+            background-color: #F4FFFF;
+        }
+
+        ul.hierarchy {
+            border: 1px solid navy;
+            padding: 5px 25px 5px 25px;
+            background-color: #F4FFFF;
+        }
+
+
+        ul.hlist li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .entity {
+            border: 1px solid navy;
+            margin:5px 0 5px 0;
+            padding: 5px;
+        }
+
+        .entity th {
+            width: 150px;
+            vertical-align: top;
+        }
+
+        .entity th,
+        .entity td {
+            padding-bottom: 20px;
+        }
+
+        .entity table th {
+            text-align: left;
+        }
+
+        section#overview img {
+            max-width: 1000px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: left
+        }
+        h1, h2, h3 {
+            color: #005A9C; background: white
+        }
+        h1 {
+            font: 170% sans-serif;
+            line-height: 110%;
+        }
+        h2 {
+            font: 140% sans-serif;
+            margin-top:40px;
+        }
+        h3 {
+            font: 120% sans-serif;
+            margin-top: 3px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid navy;
+        }
+        h4 { font: bold 100% sans-serif }
+        h5 { font: italic 100% sans-serif }
+        h6 { font: small-caps 100% sans-serif }
+
+
+        body {
+            padding: 2em 70px 2em 70px;
+            margin: 0;
+            font-family: sans-serif;
+            color: black;
+            background: white;
+            background-position: top left;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            text-align: justify;
+        }
+
+        section {
+            max-width: 1500px;
+        }
+
+        .figure {
+            margin-bottom: 20px;
+        }
+
+        :link { color: #00C; background: transparent }
+        :visited { color: #609; background: transparent }
+        a:active { color: #C00; background: transparent }
+
+        .sup-c,
+        .sup-op,
+        .sup-fp,
+        .sup-dp,
+        .sup-ap,
+        .sup-p,
+        .sup-ni,
+        .sup-cp,
+        .sup-cl {
+            cursor:help;
+            margin-left: 3px;
+        }
+
+        .sup-c {
+            color:orange;
+        }
+
+        .sup-op {
+            color:navy;
+        }
+
+        .sup-fp {
+            color:lightskyblue;
+        }
+
+        .sup-dp {
+            color:green;
+        }
+
+        .sup-ap {
+            color:darkred;
+        }
+
+        .sup-p {
+            color:black;
+        }
+
+        .sup-ni {
+            color:brown;
+        }
+
+        .sup-cp {
+            color:orange;
+        }
+
+        .sup-cl {
+            color:darkred;
+        }
+
+        code {
+            font-size: large;
+            color: darkred;
+        }
+
+        /* less prominent links for properties */
+        .proplink {
+            color: #336;
+            text-decoration: none;
+        }
+    </style>
+    
+    <script type="application/ld+json">
+      [
+  {
+    "@id": "https://w3id.org/digitalconstruction/0.5/Materials",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/description": [
+      {
+        "@value": "<p>The Material Ontology defining the main concepts of building material, type and its properties.</p>"
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "Digital Construction Materials"
+      }
+    ]
+  }
+]
+    </script>
+</head>
+<body>
+  <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">
+    <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
+    <span style="font-size:smaller;">2.8.5</span>
+  </div>
+  <h1>Digital Construction Materials</h1>
+<section id="metadata">
+    <h2 style="display:none;">Metadata</h2>
+    <dl>
+        <dt>URI</dt>
+        <dd><code>https://w3id.org/digitalconstruction/0.5/Materials</code></dd>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/creator">Creator</a>(s)</dt>
+        <dd>
+            Janakiram Karlapudi (janakiram.karlapudi@tu-dresden.de)<br/>
+            Prathap Valluru (prathap.valluru@tu-dresden.de)<br/>
+        </dd>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/contributor">Contributor</a>(s)</dt>
+        <dd>
+            Seppo Törmä (seppo.torma@visualynk.com)<br/>
+        </dd>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/issued">Issued</a></dt>
+        <dd>2021-04-21T16:00:00</dd>
+        <dt>Version Information</dt>
+        <dd>0.5</dd>
+        <dt>Version URI</dt>
+        <dd><a href="https://w3id.org/digitalconstruction/0.5/Materials">https://w3id.org/digitalconstruction/0.5/Materials</a></dd>
+        <dt>Imports</dt>
+        <dd>
+            <a href="https://w3id.org/digitalconstruction/0.5/Entities/entities.ttl">https://w3id.org/digitalconstruction/0.5/Entities/entities.ttl</a><br/>
+        </dd>
+        <dt>Ontology RDF</dt>
+        <dd><a href="materials.ttl">RDF (turtle)</a></dd>
+    </dl>
+    <h2>Description</h2>
+    <div id="description">
+        <p>The Material Ontology defining the main concepts of building material, type and its properties.</p>
+    </div>
+</section>
+<section id="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#objectproperties">Object Properties</a></li>
+        <li><a href="#datatypeproperties">Datatype Properties</a></li>
+        <li><a href="#annotationproperties">Annotation Properties</a></li>
+        <li><a href="#namedindividuals">Named Individuals</a></li>
+        <li><a href="#namespaces">Namespaces</a></li>
+        <li><a href="#legend">Legend</a></li>
+    </ol>
+</section>
+<section id="overview">
+    <h2>Overview</h2>
+    <div class="figure">
+        <div style="width:500px; height:50px; background-color: lightgrey; border:solid 2px grey; padding:10px;margin-bottom:5px; text-align:center;">Pictures say 1,000 words</div>
+        <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
+    </div>
+</section>
+  <section id="classes">
+    <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#CompositeMaterial">CompositeMaterial</a></li>
+        <li><a href="#Constituent">Constituent</a></li>
+        <li><a href="#ConstituentSet">ConstituentSet</a></li>
+        <li><a href="#InorganicNonMetallicMaterial">InorganicNonMetallicMaterial</a></li>
+        <li><a href="#Layer">Layer</a></li>
+        <li><a href="#LayerSet">LayerSet</a></li>
+        <li><a href="#Material">Material</a></li>
+        <li><a href="#MaterialBatch">MaterialBatch</a></li>
+        <li><a href="#MaterialChemicalProperty">MaterialChemicalProperty</a></li>
+        <li><a href="#MaterialCombustionProperty">MaterialCombustionProperty</a></li>
+        <li><a href="#MaterialEnergyProperty">MaterialEnergyProperty</a></li>
+        <li><a href="#MaterialFuelProperty">MaterialFuelProperty</a></li>
+        <li><a href="#MaterialHygroscopicProperty">MaterialHygroscopicProperty</a></li>
+        <li><a href="#MaterialMechanicalProperty">MaterialMechanicalProperty</a></li>
+        <li><a href="#MaterialObjectStructure">MaterialObjectStructure</a></li>
+        <li><a href="#MaterialOpticalProperty">MaterialOpticalProperty</a></li>
+        <li><a href="#MaterialPhysicalProperty">MaterialPhysicalProperty</a></li>
+        <li><a href="#MaterialProperty">MaterialProperty</a></li>
+        <li><a href="#MaterialThermalProperty">MaterialThermalProperty</a></li>
+        <li><a href="#MetallicMaterial">MetallicMaterial</a></li>
+        <li><a href="#OrganicaMaterial">OrganicaMaterial</a></li>
+        <li><a href="#Profile">Profile</a></li>
+        <li><a href="#ProfileSet">ProfileSet</a></li>
+    </ul>
+    <div class="entity class" id="CompositeMaterial">
+        <h3>CompositeMaterial<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#CompositeMaterial</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Constituent">
+        <h3>Constituent<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#Constituent</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Constituent is a single and identifiable part of an element which is constructed of a number of part (one or more) each having an individual material. (Source:IFC)</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#MaterialObjectStructure">dicm:MaterialObjectStructure</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasConstituent">dicm:hasConstituent</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="ConstituentSet">
+        <h3>ConstituentSet<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#ConstituentSet</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>ConstituentSet is a collection of individual material constituents, each assigning a material to a part of an element. (Source:IFC)</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#MaterialObjectStructure">dicm:MaterialObjectStructure</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasConstituentSet">dicm:hasConstituentSet</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="InorganicNonMetallicMaterial">
+        <h3>InorganicNonMetallicMaterial<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#InorganicNonMetallicMaterial</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Layer">
+        <h3>Layer<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#Layer</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The concept to represent a layer of an element</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#MaterialObjectStructure">dicm:MaterialObjectStructure</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#IsInnerLayerOf">dicm:IsInnerLayerOf</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#IsOuterLayerOf">dicm:IsOuterLayerOf</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#adjacentLayer">dicm:adjacentLayer</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#adjacentLayer">dicm:adjacentLayer</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#OuterLayer">dicm:OuterLayer</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasLayer">dicm:hasLayer</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#adjacentElementLayer">dicm:adjacentElementLayer</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#InnerLayer">dicm:InnerLayer</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="LayerSet">
+        <h3>LayerSet<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#LayerSet</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>LayerSet is a designation by which materials of an element constructed of a number of material layers is known and through which the relative positioning of individual layers can be expressed. (Source:IFC)</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#MaterialObjectStructure">dicm:MaterialObjectStructure</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasLayerSet">dicm:hasLayerSet</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Material">
+        <h3>Material<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#Material</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>a homogeneous or inhomogeneous substance that can be used to form elements (physical products or their components). [ISO 16739]</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/digitalconstruction/0.5/Entities#MaterialEntity">dice:MaterialEntity</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#MetallicMaterial">dicm:MetallicMaterial</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#CompositeMaterial">dicm:CompositeMaterial</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#OrganicaMaterial">dicm:OrganicaMaterial</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#InorganicNonMetallicMaterial">dicm:InorganicNonMetallicMaterial</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#hasCOContent">dicm:hasCOContent</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasSpecificHeatTemperatureDerivative">dicm:hasSpecificHeatTemperatureDerivative</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasSolarRefractionIndex">dicm:hasSolarRefractionIndex</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasThermalIrEmissivityBack">dicm:hasThermalIrEmissivityBack</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasVisibleTransmittance">dicm:hasVisibleTransmittance</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasPHLevel">dicm:hasPHLevel</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasMoistureCapacityThermalGradient">dicm:hasMoistureCapacityThermalGradient</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasDynamicViscosity">dicm:hasDynamicViscosity</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasSpecificHeatCapacity">dicm:hasSpecificHeatCapacity</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasN20Content">dicm:hasN20Content</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasCO2Content">dicm:hasCO2Content</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasHardness">dicm:hasHardness</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasMoistureDiffusivity">dicm:hasMoistureDiffusivity</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasFreezingPoint">dicm:hasFreezingPoint</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasIsothermalMoistureCapacity">dicm:hasIsothermalMoistureCapacity</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasSolarReflectanceFront">dicm:hasSolarReflectanceFront</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasThermalConductivity">dicm:hasThermalConductivity</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasPoissonRatio">dicm:hasPoissonRatio</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasMolecularWeight">dicm:hasMolecularWeight</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasBoilingPoint">dicm:hasBoilingPoint</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasHigherHeatingValue">dicm:hasHigherHeatingValue</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasThermalIrEmissivityFront">dicm:hasThermalIrEmissivityFront</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasYoungModulus">dicm:hasYoungModulus</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasSolarReflectanceBack">dicm:hasSolarReflectanceBack</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasVisibleReflectanceBack">dicm:hasVisibleReflectanceBack</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasThermalConductivityTemperatureDerivative">dicm:hasThermalConductivityTemperatureDerivative</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasSolarTransmittance">dicm:hasSolarTransmittance</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasLowerVaporResistanceFactor">dicm:hasLowerVaporResistanceFactor</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasCombustionTemperature">dicm:hasCombustionTemperature</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasUpperVaporResistanceFactor">dicm:hasUpperVaporResistanceFactor</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasThermalExpansionCoefficient">dicm:hasThermalExpansionCoefficient</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasPorosity">dicm:hasPorosity</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasLowerHeatingValue">dicm:hasLowerHeatingValue</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasViscosityTemperatureDerivative">dicm:hasViscosityTemperatureDerivative</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasCarbonContent">dicm:hasCarbonContent</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasShearModulus">dicm:hasShearModulus</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasMassDensity">dicm:hasMassDensity</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasVisibleReflectanceFront">dicm:hasVisibleReflectanceFront</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasVaporPermeability">dicm:hasVaporPermeability</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasGasPressure">dicm:hasGasPressure</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasVisibleRefractionIndex">dicm:hasVisibleRefractionIndex</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasMaterial1">dicm:hasMaterial</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="MaterialBatch">
+        <h3>MaterialBatch<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#MaterialBatch</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Material batch refers to the collection of homogeneous physical substance that participates in the construction project as the input of a process.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/digitalconstruction/0.5/Entities#MaterialEntity">dice:MaterialEntity</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#isMaterialBatchIn">dicm:isMaterialBatchIn</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasMaterialBatch">dicm:hasMaterialBatch</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="MaterialChemicalProperty">
+        <h3>MaterialChemicalProperty<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#MaterialChemicalProperty</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#MaterialProperty">dicm:MaterialProperty</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasAcidityConcentration">dicm:hasAcidityConcentration</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasPHLevel">dicm:hasPHLevel</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasHardness">dicm:hasHardness</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasAlkalinityConcentration">dicm:hasAlkalinityConcentration</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="MaterialCombustionProperty">
+        <h3>MaterialCombustionProperty<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#MaterialCombustionProperty</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#MaterialProperty">dicm:MaterialProperty</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasCO2Content">dicm:hasCO2Content</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasCOContent">dicm:hasCOContent</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasN20Content">dicm:hasN20Content</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="MaterialEnergyProperty">
+        <h3>MaterialEnergyProperty<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#MaterialEnergyProperty</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#MaterialProperty">dicm:MaterialProperty</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasThermalConductivityTemperatureDerivative">dicm:hasThermalConductivityTemperatureDerivative</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasVisibleRefractionIndex">dicm:hasVisibleRefractionIndex</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasSolarRefractionIndex">dicm:hasSolarRefractionIndex</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasMoistureCapacityThermalGradient">dicm:hasMoistureCapacityThermalGradient</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasSpecificHeatTemperatureDerivative">dicm:hasSpecificHeatTemperatureDerivative</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasViscosityTemperatureDerivative">dicm:hasViscosityTemperatureDerivative</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasGasPressure">dicm:hasGasPressure</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="MaterialFuelProperty">
+        <h3>MaterialFuelProperty<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#MaterialFuelProperty</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#MaterialProperty">dicm:MaterialProperty</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasHigherHeatingValue">dicm:hasHigherHeatingValue</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasCarbonContent">dicm:hasCarbonContent</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasLowerHeatingValue">dicm:hasLowerHeatingValue</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasCombustionTemperature">dicm:hasCombustionTemperature</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="MaterialHygroscopicProperty">
+        <h3>MaterialHygroscopicProperty<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#MaterialHygroscopicProperty</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#MaterialProperty">dicm:MaterialProperty</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasLowerVaporResistanceFactor">dicm:hasLowerVaporResistanceFactor</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasVaporPermeability">dicm:hasVaporPermeability</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasIsothermalMoistureCapacity">dicm:hasIsothermalMoistureCapacity</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasUpperVaporResistanceFactor">dicm:hasUpperVaporResistanceFactor</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasMoistureDiffusivity">dicm:hasMoistureDiffusivity</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="MaterialMechanicalProperty">
+        <h3>MaterialMechanicalProperty<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#MaterialMechanicalProperty</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#MaterialProperty">dicm:MaterialProperty</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasShearModulus">dicm:hasShearModulus</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasThermalExpansionCoefficient">dicm:hasThermalExpansionCoefficient</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasPoissonRatio">dicm:hasPoissonRatio</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasDynamicViscosity">dicm:hasDynamicViscosity</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasYoungModulus">dicm:hasYoungModulus</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="MaterialObjectStructure">
+        <h3>MaterialObjectStructure<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#MaterialObjectStructure</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A concept to represent material related information that has material related properties</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/digitalconstruction/0.5/Entities#BuildingObject">dice:BuildingObject</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#ConstituentSet">dicm:ConstituentSet</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#ProfileSet">dicm:ProfileSet</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#LayerSet">dicm:LayerSet</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Profile">dicm:Profile</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Constituent">dicm:Constituent</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Layer">dicm:Layer</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="MaterialOpticalProperty">
+        <h3>MaterialOpticalProperty<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#MaterialOpticalProperty</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#MaterialProperty">dicm:MaterialProperty</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasVisibleReflectanceFront">dicm:hasVisibleReflectanceFront</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasVisibleTransmittance">dicm:hasVisibleTransmittance</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasVisibleReflectanceBack">dicm:hasVisibleReflectanceBack</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasSolarTransmittance">dicm:hasSolarTransmittance</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasSolarReflectanceFront">dicm:hasSolarReflectanceFront</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasThermalIrEmissivityBack">dicm:hasThermalIrEmissivityBack</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasThermalIrEmissivityFront">dicm:hasThermalIrEmissivityFront</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasSolarReflectanceBack">dicm:hasSolarReflectanceBack</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="MaterialPhysicalProperty">
+        <h3>MaterialPhysicalProperty<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#MaterialPhysicalProperty</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#MaterialProperty">dicm:MaterialProperty</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasMolecularWeight">dicm:hasMolecularWeight</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasMassDensity">dicm:hasMassDensity</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasPorosity">dicm:hasPorosity</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="MaterialProperty">
+        <h3>MaterialProperty<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#MaterialProperty</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A characterstic of a material</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/digitalconstruction/0.5/Variables#QuantitativeProperty">dicv:QuantitativeProperty</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#MaterialFuelProperty">dicm:MaterialFuelProperty</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#MaterialOpticalProperty">dicm:MaterialOpticalProperty</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#MaterialCombustionProperty">dicm:MaterialCombustionProperty</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#MaterialMechanicalProperty">dicm:MaterialMechanicalProperty</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#MaterialChemicalProperty">dicm:MaterialChemicalProperty</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#MaterialHygroscopicProperty">dicm:MaterialHygroscopicProperty</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#MaterialThermalProperty">dicm:MaterialThermalProperty</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#MaterialEnergyProperty">dicm:MaterialEnergyProperty</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#MaterialPhysicalProperty">dicm:MaterialPhysicalProperty</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="MaterialThermalProperty">
+        <h3>MaterialThermalProperty<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#MaterialThermalProperty</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#MaterialProperty">dicm:MaterialProperty</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasThermalConductivity">dicm:hasThermalConductivity</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasBoilingPoint">dicm:hasBoilingPoint</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasFreezingPoint">dicm:hasFreezingPoint</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasThermalCapacity">dicm:hasThermalCapacity</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasSpecificHeatCapacity">dicm:hasSpecificHeatCapacity</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasThermalResistivity">dicm:hasThermalResistivity</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="MetallicMaterial">
+        <h3>MetallicMaterial<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#MetallicMaterial</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="OrganicaMaterial">
+        <h3>OrganicaMaterial<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#OrganicaMaterial</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Profile">
+        <h3>Profile<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#Profile</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Profile is a single and identifiable cross section of an element which is constructed of a number of profiles (one or more) (Source:IFC).</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#MaterialObjectStructure">dicm:MaterialObjectStructure</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasProfile">dicm:hasProfile</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="ProfileSet">
+        <h3>ProfileSet<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#ProfileSet</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>ProfileSet is a designation by which individual material(s) of a prismatic element (for example, beam or column) constructed of a single or multiple material profiles is known. (Source:IFC)</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#MaterialObjectStructure">dicm:MaterialObjectStructure</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasProfileSet">dicm:hasProfileSet</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+<section id="objectproperties">
+    <h2>Object Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#hasMaterial">hasMaterial</a></li>
+        <li><a href="#InnerLayer">InnerLayer</a></li>
+        <li><a href="#IsInnerLayerOf">IsInnerLayerOf</a></li>
+        <li><a href="#IsOuterLayerOf">IsOuterLayerOf</a></li>
+        <li><a href="#OuterLayer">OuterLayer</a></li>
+        <li><a href="#adjacentElement">adjacentElement</a></li>
+        <li><a href="#adjacentElementLayer">adjacentElementLayer</a></li>
+        <li><a href="#adjacentLayer">adjacentLayer</a></li>
+        <li><a href="#hasAcidityConcentration">hasAcidityConcentration</a></li>
+        <li><a href="#hasAlkalinityConcentration">hasAlkalinityConcentration</a></li>
+        <li><a href="#hasBoilingPoint">hasBoilingPoint</a></li>
+        <li><a href="#hasCO2Content">hasCO2Content</a></li>
+        <li><a href="#hasCOContent">hasCOContent</a></li>
+        <li><a href="#hasCarbonContent">hasCarbonContent</a></li>
+        <li><a href="#hasCombustionTemperature">hasCombustionTemperature</a></li>
+        <li><a href="#hasConstituent">hasConstituent</a></li>
+        <li><a href="#hasConstituentSet">hasConstituentSet</a></li>
+        <li><a href="#hasDynamicViscosity">hasDynamicViscosity</a></li>
+        <li><a href="#hasFreezingPoint">hasFreezingPoint</a></li>
+        <li><a href="#hasGasPressure">hasGasPressure</a></li>
+        <li><a href="#hasHardness">hasHardness</a></li>
+        <li><a href="#hasHigherHeatingValue">hasHigherHeatingValue</a></li>
+        <li><a href="#hasIsothermalMoistureCapacity">hasIsothermalMoistureCapacity</a></li>
+        <li><a href="#hasLayer">hasLayer</a></li>
+        <li><a href="#hasLayerSet">hasLayerSet</a></li>
+        <li><a href="#hasLowerHeatingValue">hasLowerHeatingValue</a></li>
+        <li><a href="#hasLowerVaporResistanceFactor">hasLowerVaporResistanceFactor</a></li>
+        <li><a href="#hasMassDensity">hasMassDensity</a></li>
+        <li><a href="#hasMaterial1">hasMaterial</a></li>
+        <li><a href="#hasMaterialBatch">hasMaterialBatch</a></li>
+        <li><a href="#hasMoistureCapacityThermalGradient">hasMoistureCapacityThermalGradient</a></li>
+        <li><a href="#hasMoistureDiffusivity">hasMoistureDiffusivity</a></li>
+        <li><a href="#hasMolecularWeight">hasMolecularWeight</a></li>
+        <li><a href="#hasN20Content">hasN20Content</a></li>
+        <li><a href="#hasPHLevel">hasPHLevel</a></li>
+        <li><a href="#hasPoissonRatio">hasPoissonRatio</a></li>
+        <li><a href="#hasPorosity">hasPorosity</a></li>
+        <li><a href="#hasProfile">hasProfile</a></li>
+        <li><a href="#hasProfileSet">hasProfileSet</a></li>
+        <li><a href="#hasShearModulus">hasShearModulus</a></li>
+        <li><a href="#hasSolarReflectanceBack">hasSolarReflectanceBack</a></li>
+        <li><a href="#hasSolarReflectanceFront">hasSolarReflectanceFront</a></li>
+        <li><a href="#hasSolarRefractionIndex">hasSolarRefractionIndex</a></li>
+        <li><a href="#hasSolarTransmittance">hasSolarTransmittance</a></li>
+        <li><a href="#hasSpecificHeatCapacity">hasSpecificHeatCapacity</a></li>
+        <li><a href="#hasSpecificHeatTemperatureDerivative">hasSpecificHeatTemperatureDerivative</a></li>
+        <li><a href="#hasThermalCapacity">hasThermalCapacity</a></li>
+        <li><a href="#hasThermalConductivity">hasThermalConductivity</a></li>
+        <li><a href="#hasThermalConductivityTemperatureDerivative">hasThermalConductivityTemperatureDerivative</a></li>
+        <li><a href="#hasThermalExpansionCoefficient">hasThermalExpansionCoefficient</a></li>
+        <li><a href="#hasThermalIrEmissivityBack">hasThermalIrEmissivityBack</a></li>
+        <li><a href="#hasThermalIrEmissivityFront">hasThermalIrEmissivityFront</a></li>
+        <li><a href="#hasThermalMass">hasThermalMass</a></li>
+        <li><a href="#hasThermalResistivity">hasThermalResistivity</a></li>
+        <li><a href="#hasThermalTransmittance">hasThermalTransmittance</a></li>
+        <li><a href="#hasThickness">hasThickness</a></li>
+        <li><a href="#hasUpperVaporResistanceFactor">hasUpperVaporResistanceFactor</a></li>
+        <li><a href="#hasVaporPermeability">hasVaporPermeability</a></li>
+        <li><a href="#hasViscosityTemperatureDerivative">hasViscosityTemperatureDerivative</a></li>
+        <li><a href="#hasVisibleReflectanceBack">hasVisibleReflectanceBack</a></li>
+        <li><a href="#hasVisibleReflectanceFront">hasVisibleReflectanceFront</a></li>
+        <li><a href="#hasVisibleRefractionIndex">hasVisibleRefractionIndex</a></li>
+        <li><a href="#hasVisibleTransmittance">hasVisibleTransmittance</a></li>
+        <li><a href="#hasYoungModulus">hasYoungModulus</a></li>
+        <li><a href="#isMaterialBatchIn">isMaterialBatchIn</a></li>
+    </ul>
+    <div class="entity property" id="hasMaterial">
+        <h3>hasMaterial<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Entities#hasMaterial</code></td>
+            </tr>
+            <tr>
+                <th>Equivalent properties</th>
+                <td>
+                    <a href="#hasMaterial1">dicm:hasMaterial</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="InnerLayer">
+        <h3>InnerLayer<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#InnerLayer</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="#hasLayer">dicm:hasLayer</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="#IsInnerLayerOf">dicm:IsInnerLayerOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Layer">dicm:Layer</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="IsInnerLayerOf">
+        <h3>IsInnerLayerOf<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#IsInnerLayerOf</code></td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Layer">dicm:Layer</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="IsOuterLayerOf">
+        <h3>IsOuterLayerOf<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#IsOuterLayerOf</code></td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="#OuterLayer">dicm:OuterLayer</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Layer">dicm:Layer</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="OuterLayer">
+        <h3>OuterLayer<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#OuterLayer</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="#hasLayer">dicm:hasLayer</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Layer">dicm:Layer</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="adjacentElement">
+        <h3>adjacentElement<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#adjacentElement</code></td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/digitalconstruction/0.5/Entities#BuildingObject">dice:BuildingObject</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="adjacentElementLayer">
+        <h3>adjacentElementLayer<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#adjacentElementLayer</code></td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Layer">dicm:Layer</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="adjacentLayer">
+        <h3>adjacentLayer<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#adjacentLayer</code></td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Layer">dicm:Layer</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Layer">dicm:Layer</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasAcidityConcentration">
+        <h3>hasAcidityConcentration<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasAcidityConcentration</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Maximum CaCO3 equivalent that would neutralize the acid;
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialChemicalProperty">dicm:MaterialChemicalProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasAlkalinityConcentration">
+        <h3>hasAlkalinityConcentration<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasAlkalinityConcentration</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Maximum alkalinity concentration (maximum sum of concentrations of each of the negative ions substances measured as CaCO3)
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialChemicalProperty">dicm:MaterialChemicalProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasBoilingPoint">
+        <h3>hasBoilingPoint<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasBoilingPoint</code></td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialThermalProperty">dicm:MaterialThermalProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasCO2Content">
+        <h3>hasCO2Content<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasCO2Content</code></td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialCombustionProperty">dicm:MaterialCombustionProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasCOContent">
+        <h3>hasCOContent<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasCOContent</code></td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialCombustionProperty">dicm:MaterialCombustionProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasCarbonContent">
+        <h3>hasCarbonContent<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasCarbonContent</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The carbon content in the fuel; This is measured in weight of carbon per unit weight of fuel and is therefore unitless [ISO 16739-1:2018]
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialFuelProperty">dicm:MaterialFuelProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasCombustionTemperature">
+        <h3>hasCombustionTemperature<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasCombustionTemperature</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Combustion temperature of the material when air is at 298 K and 100 kPa [ISO 16739-1:2018]
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialFuelProperty">dicm:MaterialFuelProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasConstituent">
+        <h3>hasConstituent<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasConstituent</code></td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Constituent">dicm:Constituent</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasConstituentSet">
+        <h3>hasConstituentSet<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasConstituentSet</code></td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#ConstituentSet">dicm:ConstituentSet</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasDynamicViscosity">
+        <h3>hasDynamicViscosity<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasDynamicViscosity</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    A measure of the viscous resistance of the material [ISO 16739-1:2018]
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialMechanicalProperty">dicm:MaterialMechanicalProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasFreezingPoint">
+        <h3>hasFreezingPoint<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasFreezingPoint</code></td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialThermalProperty">dicm:MaterialThermalProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasGasPressure">
+        <h3>hasGasPressure<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasGasPressure</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Fill pressure (for insance, for between-pane gas fills): the pressure exerted by a mass of gas confined in a constant volume [ISO 16739-1:2018]
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialEnergyProperty">dicm:MaterialEnergyProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasHardness">
+        <h3>hasHardness<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasHardness</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Water hardness as positive, multivalent ion concentration in the water (usually concentrations of calcium and magnesium ions in terms of calcium carbonate)
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialChemicalProperty">dicm:MaterialChemicalProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasHigherHeatingValue">
+        <h3>hasHigherHeatingValue<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasHigherHeatingValue</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Higher Heating Value is defined as the amount of energy released (MJ/kg) when a fuel is burned completely, and H2O is in liquid form in the combustion products [ISO 16739-1:2018]
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialFuelProperty">dicm:MaterialFuelProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasIsothermalMoistureCapacity">
+        <h3>hasIsothermalMoistureCapacity<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasIsothermalMoistureCapacity</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Based on water vapor density [ISO 16739-1:2018]
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialHygroscopicProperty">dicm:MaterialHygroscopicProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasLayer">
+        <h3>hasLayer<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasLayer</code></td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Layer">dicm:Layer</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasLayerSet">
+        <h3>hasLayerSet<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasLayerSet</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#LayerSet">dicm:LayerSet</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasLowerHeatingValue">
+        <h3>hasLowerHeatingValue<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasLowerHeatingValue</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Lower Heating Value is defined as the amount of energy released (MJ/kg) when a fuel is burned completely, and H2O is in vapor form in the combustion products [ISO 16739-1:2018]
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialFuelProperty">dicm:MaterialFuelProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasLowerVaporResistanceFactor">
+        <h3>hasLowerVaporResistanceFactor<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasLowerVaporResistanceFactor</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The vapor permeability relationship of air/material (typically value > 1), measured in low relative humidity (typically in 0/50 % RH) [ISO 16739-1:2018]
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialHygroscopicProperty">dicm:MaterialHygroscopicProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasMassDensity">
+        <h3>hasMassDensity<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasMassDensity</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Material mass density [ISO 16739-1:2018]
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialPhysicalProperty">dicm:MaterialPhysicalProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasMaterial1">
+        <h3>hasMaterial<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasMaterial</code></td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasMaterialBatch">
+        <h3>hasMaterialBatch<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasMaterialBatch</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="https://w3id.org/digitalconstruction/0.5/Entities#hasParticipant">dice:hasParticipant</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://w3id.org/digitalconstruction/0.5/Entities#isMateriaBatchlIn">dice:isMateriaBatchlIn</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/digitalconstruction/0.5/Entities#Process">dice:Process</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialBatch">dicm:MaterialBatch</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasMoistureCapacityThermalGradient">
+        <h3>hasMoistureCapacityThermalGradient<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasMoistureCapacityThermalGradient</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Thermal gradient coefficient for moisture capacity. Based on water vapor density.[ISO 16739-1:2018]
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialEnergyProperty">dicm:MaterialEnergyProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasMoistureDiffusivity">
+        <h3>hasMoistureDiffusivity<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasMoistureDiffusivity</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Moisture diffusivity is a transport property that is frequently used in the hygrothermal analysis of building envelope components.
+Moisture diffusivity is a transport property that is frequently used in the hygrothermal analysis of building envelope components. [ISO 16739-1:2018]
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialHygroscopicProperty">dicm:MaterialHygroscopicProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasMolecularWeight">
+        <h3>hasMolecularWeight<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasMolecularWeight</code></td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialPhysicalProperty">dicm:MaterialPhysicalProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasN20Content">
+        <h3>hasN20Content<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasN20Content</code></td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialCombustionProperty">dicm:MaterialCombustionProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasPHLevel">
+        <h3>hasPHLevel<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasPHLevel</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Maximum water PH in a range from 0-14.
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialChemicalProperty">dicm:MaterialChemicalProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasPoissonRatio">
+        <h3>hasPoissonRatio<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasPoissonRatio</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    A measure of the lateral deformations in the elastic range. [ISO 16739-1:2018]
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialMechanicalProperty">dicm:MaterialMechanicalProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasPorosity">
+        <h3>hasPorosity<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasPorosity</code></td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialPhysicalProperty">dicm:MaterialPhysicalProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasProfile">
+        <h3>hasProfile<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasProfile</code></td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Profile">dicm:Profile</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasProfileSet">
+        <h3>hasProfileSet<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasProfileSet</code></td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#ProfileSet">dicm:ProfileSet</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasShearModulus">
+        <h3>hasShearModulus<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasShearModulus</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    A measure of the shear modulus of elasticity of the material. [ISO 16739-1:2018]
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialMechanicalProperty">dicm:MaterialMechanicalProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasSolarReflectanceBack">
+        <h3>hasSolarReflectanceBack<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasSolarReflectanceBack</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Reflectance at normal incidence (solar): back side. Defines the fraction of the solar ray that is reflected and not transmitted when the ray passes from one medium into another, at the "back" side of the other material, perpendicular to the surface. Dependent on material and surface characteristics. [ISO 16739-1:2018]
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialOpticalProperty">dicm:MaterialOpticalProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasSolarReflectanceFront">
+        <h3>hasSolarReflectanceFront<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasSolarReflectanceFront</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Reflectance at normal incidence (solar): front side. Defines the fraction of the solar ray that is reflected and not transmitted when the ray passes from one medium into another, at the "front" side of the other material, perpendicular to the surface. Dependent on material and surface characteristics.[ISO 16739-1:2018]
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialOpticalProperty">dicm:MaterialOpticalProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasSolarRefractionIndex">
+        <h3>hasSolarRefractionIndex<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasSolarRefractionIndex</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Index of refraction (solar) defines the "bending" of the solar ray when it passes from one medium into another. [ISO 16739-1:2018]
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialEnergyProperty">dicm:MaterialEnergyProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasSolarTransmittance">
+        <h3>hasSolarTransmittance<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasSolarTransmittance</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Transmittance at normal incidence (solar). Defines the fraction of solar radiation that passes through per unit area, perpendicular to the surface. [ISO 16739-1:2018]
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialOpticalProperty">dicm:MaterialOpticalProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasSpecificHeatCapacity">
+        <h3>hasSpecificHeatCapacity<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasSpecificHeatCapacity</code></td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialThermalProperty">dicm:MaterialThermalProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasSpecificHeatTemperatureDerivative">
+        <h3>hasSpecificHeatTemperatureDerivative<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasSpecificHeatTemperatureDerivative</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Specific heat temperature derivative. [ISO 16739-1:2018]
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialEnergyProperty">dicm:MaterialEnergyProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasThermalCapacity">
+        <h3>hasThermalCapacity<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasThermalCapacity</code></td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialThermalProperty">dicm:MaterialThermalProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasThermalConductivity">
+        <h3>hasThermalConductivity<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasThermalConductivity</code></td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialThermalProperty">dicm:MaterialThermalProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasThermalConductivityTemperatureDerivative">
+        <h3>hasThermalConductivityTemperatureDerivative<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasThermalConductivityTemperatureDerivative</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Thermal conductivity temperature derivative. [ISO 16739-1:2018]
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialEnergyProperty">dicm:MaterialEnergyProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasThermalExpansionCoefficient">
+        <h3>hasThermalExpansionCoefficient<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasThermalExpansionCoefficient</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    A measure of the expansion coefficient for warming up the material about one Kelvin. [ISO 16739-1:2018]
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialMechanicalProperty">dicm:MaterialMechanicalProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasThermalIrEmissivityBack">
+        <h3>hasThermalIrEmissivityBack<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasThermalIrEmissivityBack</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Thermal IR emissivity: back side. Defines the fraction of thermal energy emitted per unit area to "blackbody" at the same temperature, through the "back" side of the material. [ISO 16739-1:2018]
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialOpticalProperty">dicm:MaterialOpticalProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasThermalIrEmissivityFront">
+        <h3>hasThermalIrEmissivityFront<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasThermalIrEmissivityFront</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Thermal IR emissivity: front side. Defines the fraction of thermal energy emitted per unit area to "blackbody" at the same temperature, through the "front" side of the material.[ISO 16739-1:2018]
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialOpticalProperty">dicm:MaterialOpticalProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasThermalMass">
+        <h3>hasThermalMass<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasThermalMass</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasThermalResistivity">
+        <h3>hasThermalResistivity<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasThermalResistivity</code></td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialThermalProperty">dicm:MaterialThermalProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasThermalTransmittance">
+        <h3>hasThermalTransmittance<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasThermalTransmittance</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasThickness">
+        <h3>hasThickness<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasThickness</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasUpperVaporResistanceFactor">
+        <h3>hasUpperVaporResistanceFactor<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasUpperVaporResistanceFactor</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The vapor permeability relationship of air/material (typically value > 1), measured in high relative humidity (typically in 95/50 % RH). [ISO 16739-1:2018]
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialHygroscopicProperty">dicm:MaterialHygroscopicProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasVaporPermeability">
+        <h3>hasVaporPermeability<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasVaporPermeability</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The rate of water vapor transmission per unit area per unit of vapor pressure differential under test conditions. [ISO 16739-1:2018]
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialHygroscopicProperty">dicm:MaterialHygroscopicProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasViscosityTemperatureDerivative">
+        <h3>hasViscosityTemperatureDerivative<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasViscosityTemperatureDerivative</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Viscosity temperature derivative. [ISO 16739-1:2018]
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialEnergyProperty">dicm:MaterialEnergyProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasVisibleReflectanceBack">
+        <h3>hasVisibleReflectanceBack<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasVisibleReflectanceBack</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Reflectance at normal incidence (visible): back side. Defines the fraction of the solar ray in the visible spectrum that is reflected and not transmitted when the ray passes from one medium into another, at the "back" side of the other material, perpendicular to the surface. Dependent on material and surface characteristics.[ISO 16739-1:2018]
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialOpticalProperty">dicm:MaterialOpticalProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasVisibleReflectanceFront">
+        <h3>hasVisibleReflectanceFront<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasVisibleReflectanceFront</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Reflectance at normal incidence (visible): front side. Defines the fraction of the solar ray in the visible spectrum that is reflected and not transmitted when the ray passes from one medium into another, at the "front" side of the other material, perpendicular to the surface. Dependent on material and surface characteristics.[ISO 16739-1:2018]
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialOpticalProperty">dicm:MaterialOpticalProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasVisibleRefractionIndex">
+        <h3>hasVisibleRefractionIndex<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasVisibleRefractionIndex</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Index of refraction (visible) defines the "bending" of the sola! r ray in the visible spectrum when it passes from one medium into another. [ISO 16739-1:2018]
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialEnergyProperty">dicm:MaterialEnergyProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasVisibleTransmittance">
+        <h3>hasVisibleTransmittance<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasVisibleTransmittance</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Transmittance at normal incidence (visible). Defines the fraction of the visible spectrum of solar radiation that passes through per unit area, perpendicular to the surface. [ISO 16739-1:2018]
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialOpticalProperty">dicm:MaterialOpticalProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasYoungModulus">
+        <h3>hasYoungModulus<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasYoungModulus</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    A measure of the Young's modulus of elasticity of the material. [ISO 16739-1:2018]
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Material">dicm:Material</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#MaterialMechanicalProperty">dicm:MaterialMechanicalProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="isMaterialBatchIn">
+        <h3>isMaterialBatchIn<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#isMaterialBatchIn</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="https://w3id.org/digitalconstruction/0.5/Entities#isParticipantIn">dice:isParticipantIn</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://w3id.org/digitalconstruction/0.5/Entities#hasMaterialBatch">dice:hasMaterialBatch</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#MaterialBatch">dicm:MaterialBatch</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/digitalconstruction/0.5/Entities#Process">dice:Process</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section id="datatypeproperties">
+    <h2>Datatype Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#NumberOfLayers">NumberOfLayers</a></li>
+        <li><a href="#UsedFor">UsedFor</a></li>
+        <li><a href="#hasDefinedValue">hasDefinedValue</a></li>
+        <li><a href="#hasEstimatedValue">hasEstimatedValue</a></li>
+        <li><a href="#hasMeasuredValue">hasMeasuredValue</a></li>
+        <li><a href="#hasReference">hasReference</a></li>
+        <li><a href="#hasValue">hasValue</a></li>
+    </ul>
+    <div class="entity property" id="NumberOfLayers">
+        <h3>NumberOfLayers<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#NumberOfLayers</code></td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#integer">xsd:integer</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="UsedFor">
+        <h3>UsedFor<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#UsedFor</code></td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasDefinedValue">
+        <h3>hasDefinedValue<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasDefinedValue</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Defined value is the standard value taken from the authenticated sources. For example, it is a value taken from the standards.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="#hasValue">dicm:hasValue</a><sup class="sup-dp" title="datatype property">dp</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasEstimatedValue">
+        <h3>hasEstimatedValue<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasEstimatedValue</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Estimated value is the derived value or calculated value by using other property values
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="#hasValue">dicm:hasValue</a><sup class="sup-dp" title="datatype property">dp</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasMeasuredValue">
+        <h3>hasMeasuredValue<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasMeasuredValue</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Measured Value is the resulted value from the measurement process
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="#hasValue">dicm:hasValue</a><sup class="sup-dp" title="datatype property">dp</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasReference">
+        <h3>hasReference<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasReference</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    hasRefrence: is used to represent the relation between property and the source from where it is taken.
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/digitalconstruction/0.5/Variables#QuantitativeProperty">dicv:QuantitativeProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasValue">
+        <h3>hasValue<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/digitalconstruction/0.5/Materials#hasValue</code></td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section id="annotationproperties">
+    <h2>Annotation Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#license">license</a></li>
+        <li><a href="#contributor">contributor</a></li>
+        <li><a href="#creator">creator</a></li>
+        <li><a href="#description">description</a></li>
+        <li><a href="#issued">issued</a></li>
+        <li><a href="#license1">license</a></li>
+        <li><a href="#modified">modified</a></li>
+        <li><a href="#title">title</a></li>
+        <li><a href="#preferredNamespacePrefix">preferredNamespacePrefix</a></li>
+        <li><a href="#preferredNamespaceUri">preferredNamespaceUri</a></li>
+    </ul>
+    <div class="entity property" id="license">
+        <h3>license<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/elements/1.1/license</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="contributor">
+        <h3>contributor<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/contributor</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="creator">
+        <h3>creator<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/creator</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="description">
+        <h3>description<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/description</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="issued">
+        <h3>issued<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/issued</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="license1">
+        <h3>license<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/license</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="modified">
+        <h3>modified<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/modified</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="title">
+        <h3>title<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/title</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="preferredNamespacePrefix">
+        <h3>preferredNamespacePrefix<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/vocab/vann/preferredNamespacePrefix</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="preferredNamespaceUri">
+        <h3>preferredNamespaceUri<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/vocab/vann/preferredNamespaceUri</code></td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+  
+  <section id="namedindividuals">
+    <h2>Named Individuals <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#Aluminium">Aluminium</a></li>
+        <li><a href="#Bitumen">Bitumen</a></li>
+        <li><a href="#CastIron">CastIron</a></li>
+        <li><a href="#CementStone">CementStone</a></li>
+        <li><a href="#Ceramic">Ceramic</a></li>
+        <li><a href="#Concrete">Concrete</a></li>
+        <li><a href="#Copper">Copper</a></li>
+        <li><a href="#Glass">Glass</a></li>
+        <li><a href="#Masonry">Masonry</a></li>
+        <li><a href="#Polymer">Polymer</a></li>
+        <li><a href="#Steel">Steel</a></li>
+        <li><a href="#Wood">Wood</a></li>
+    </ul>
+    <div class="entity named_individual" id="Aluminium">
+        <h3>Aluminium<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Materials#Aluminium
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Materials#MetallicMaterial">dicm:MetallicMaterial</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="Bitumen">
+        <h3>Bitumen<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Materials#Bitumen
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Materials#InorganicNonMetallicMaterial">dicm:InorganicNonMetallicMaterial</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="CastIron">
+        <h3>CastIron<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Materials#CastIron
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Materials#MetallicMaterial">dicm:MetallicMaterial</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="CementStone">
+        <h3>CementStone<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Materials#CementStone
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Materials#OrganicaMaterial">dicm:OrganicaMaterial</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="Ceramic">
+        <h3>Ceramic<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Materials#Ceramic
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Materials#OrganicaMaterial">dicm:OrganicaMaterial</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="Concrete">
+        <h3>Concrete<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Materials#Concrete
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Materials#CompositeMaterial">dicm:CompositeMaterial</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="Copper">
+        <h3>Copper<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Materials#Copper
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Materials#MetallicMaterial">dicm:MetallicMaterial</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="Glass">
+        <h3>Glass<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Materials#Glass
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Materials#OrganicaMaterial">dicm:OrganicaMaterial</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="Masonry">
+        <h3>Masonry<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Materials#Masonry
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Materials#CompositeMaterial">dicm:CompositeMaterial</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="Polymer">
+        <h3>Polymer<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Materials#Polymer
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Materials#InorganicNonMetallicMaterial">dicm:InorganicNonMetallicMaterial</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="Steel">
+        <h3>Steel<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Materials#Steel
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Materials#MetallicMaterial">dicm:MetallicMaterial</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="Wood">
+        <h3>Wood<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Materials#Wood
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Materials#InorganicNonMetallicMaterial">dicm:InorganicNonMetallicMaterial</a><br/>
+            </dd>
+        </table>
+    </div>
+</section>
+  
+  <section id="namespaces">
+    <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <dl>
+        <dt>dc</dt>
+        <dd><code>http://purl.org/dc/elements/1.1/</code></dd>
+        <dt>dct</dt>
+        <dd><code>http://purl.org/dc/terms/</code></dd>
+        <dt>dice</dt>
+        <dd><code>https://w3id.org/digitalconstruction/0.5/Entities#</code></dd>
+        <dt>dicm</dt>
+        <dd><code>https://w3id.org/digitalconstruction/0.5/Materials#</code></dd>
+        <dt>dicv</dt>
+        <dd><code>https://w3id.org/digitalconstruction/0.5/Variables#</code></dd>
+        <dt>obda</dt>
+        <dd><code>https://w3id.org/obda/vocabulary#</code></dd>
+        <dt>owl</dt>
+        <dd><code>http://www.w3.org/2002/07/owl#</code></dd>
+        <dt>prov</dt>
+        <dd><code>http://www.w3.org/ns/prov#</code></dd>
+        <dt>rdf</dt>
+        <dd><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></dd>
+        <dt>rdfs</dt>
+        <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
+        <dt>sdo</dt>
+        <dd><code>https://schema.org/</code></dd>
+        <dt>skos</dt>
+        <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
+        <dt>vann</dt>
+        <dd><code>http://purl.org/vocab/vann/</code></dd>
+        <dt>xsd</dt>
+        <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
+    </dl>
+</section>
+  <section id="legend">
+      <h2>Legend</h2>
+      <table class="entity">
+          <tr><td><sup class="sup-c" title="Classes">c</sup></td><td>Classes</td></tr>
+          <tr><td><sup class="sup-op" title="Object Properties">op</sup></td><td>Object Properties</td></tr>
+          <tr><td><sup class="sup-fp" title="Functional Properties">fp</sup></td><td>Functional Properties</td></tr>
+          <tr><td><sup class="sup-dp" title="Data Properties">dp</sup></td><td>Data Properties</td></tr>
+          <tr><td><sup class="sup-ap" title="Annotation Properties">dp</sup></td><td>Annotation Properties</td></tr>
+          <tr><td><sup class="sup-p" title="Properties">p</sup></td><td>Properties</td></tr>
+          <tr><td><sup class="sup-ni" title="Named Individuals">ni</sup></td><td>Named Individuals</td></tr>
+      </table>
+  </section>
+</body>
+</html>
