@@ -411,7 +411,7 @@ dicm:hasMaterial rdf:type owl:ObjectProperty ;
              rdfs:label "hasMaterialBatch" .
 
 :isMaterialBatchIn rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf dice:isParticipantIn ;
+              rdfs:subPropertyOf dice:participatesIn ;
 	      owl:inverseOf dice:hasMaterialBatch ;
               rdfs:domain :MaterialBatch ;
               rdfs:range dice:Process ;
@@ -900,6 +900,11 @@ dicm:YoungModulus rdf:type owl:Class ;
 # dicm:Name rdf:type owl:DatatypeProperty ;
 #           rdfs:range xsd:string .
 
+###  https://w3id.org/digitalconstruction/Entities#hasAmount
+:hasAmount rdf:type owl:DatatypeProperty ;
+           rdfs:domain :MaterialBatch ;
+           rdfs:range owl:real ;
+           rdfs:label "hasAmount" .
 
 ###  https://w3id.org/digitalconstruction/0.5/Materials#NumberOfLayers
 dicm:NumberOfLayers rdf:type owl:DatatypeProperty ;
