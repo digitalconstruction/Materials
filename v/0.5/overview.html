@@ -1,0 +1,111 @@
+<p> The Digital Construction Building Material Ontology (DICM) explicitly defines the necessary
+relationships between building elements, constructions’ details, materials and their properties. As
+such, it aims to provide information related to construction details, materials, properties, values
+and units.  </p>
+
+<p> Information about building materials is one of the important aspects to manage a building
+holistically and in a sustainable way over all phases of its building life cycle. The assignment of
+material specifications to building elements and sharing these details between stakeholders involved
+in a project is a decisive task. It will influence the project largely. These properties associated
+with different layers of building elements are necessary to perform energy, acoustic, lighting,
+etc. simulations at different stages of the project. Development and analysis of engineering models
+of a building from its early stages onwards enable performance evaluations and support informed
+design choices and decisions based on optimization. Seamless data transfer from the BIM model to
+analytical models considerably increases the efficiency and reduces the inconsistencies, efforts,
+and time in collaboration scenarios. However, challenges in data sharing activities are persistent
+in the current workflow for the conversion of BIM models to analytical models. Hence, the DICM
+ontology was developed to represent construction and material models of building elements and to
+improve interoperability. The concepts considered in the DICM ontology are represented in the figure
+below.  </p>
+
+<center>
+<img src="layers.png" width="50%">
+</center>
+
+
+<p>
+The ontology as illustrated in the following figure contains the major
+classes which are <tt>dicm:Material</tt>, <tt>dicm:MaterialObjectStructure</tt>,
+<tt>dicm:MaterialProperty</tt>, <tt>dicv:BuildingObject</tt>,
+<tt>dicv:QuantitativeProperty</tt>. Which also have major object properties,
+those are <tt>dicm:hasMaterial</tt>, <tt>dicm:hasLayer</tt>, <tt>dicm:hasLayerSet</tt>,
+<tt>dicm:hasAdjacentElementLayer</tt>, <tt>dicm:hasAdjacentLayer</tt>,
+<tt>dicm:adjacentElement</tt> and <tt>dicv:isPropertyFor</tt>. Data properties for
+material data are also defined.
+</p>
+
+<center>
+<img src="materials-overview.png" width="60%">
+</center>
+
+<p>
+The classes defined in the DICM ontology are shown below.
+</p>
+
+<center>
+<img src="materials-classes.png" width="80%">
+</center>
+
+<p>
+The class dice:BuildingObject is an entity that forms a part of an existing or designed
+building. This class have subclass related to the material object structure. The
+<tt>dicm:MaterialObjectStructure</tt> is a concept to represent material related information that has
+material related properties. The classes <tt>dicm:Layer</tt>, <tt>dicm:LayerSet</tt>, <tt>dicm:Profile</tt>, <tt>dicm:ProfileSet</tt>
+are the subclasses of <tt>dicm:MaterialObjectStructure</tt>. However, the primary focus is on <tt>dicm:Layer</tt>, and
+<tt>dicm:LayerSet</tt>. The <tt>dicm:Layer</tt> is a single and identifiable part of an element which is constructed
+of a number of layers (one or more) (ISO, 2018). The <tt>dicm:LayerSet</tt> is a designation by which
+materials of an element constructed of a number of material layers is known and through which the
+relative positioning of individual layers can be expressed (ISO, 2018).
+</p>
+
+<p> The class dice:MaterialEntity is equivalent to the BFO class 'material entity'. It has two
+subclasses. One is <tt>dicm:MaterialBatch</tt>, which is defined as a collection of homogeneous physical
+substance that participates in the construction project as the input of a process. Second concept is
+<tt>dicm:Material</tt>, which is used to represents homogeneous or inhomogeneous substance that can be used
+to form elements. It depicts the material assigned to a product. The <tt>dicm:Material</tt> has 4 subclasses,
+they are <tt>dicm:CompositeMaterial</tt>, <tt>dicm:InorganicNonMetallicMaterial</tt>, <tt>dicm:MetallicMaterial</tt>,
+<tt>dicm:OrganicMaterial</tt>. <tt>dicm:MetallicMaterial</tt> is to represents the metals which are crystalline and
+has a structure consists of crystals and grains. Example individuals of this material type are
+steel or cast iron. <tt>dicm:OrganicMaterial</tt> is used to define the organic materials such as wood,
+polymer, or bitumen. <tt>dicm:CompositeMaterial</tt> represents the constituent materials like
+concrete, masonry, or reinforced concrete. <tt>dicm:InorganicNonMetallicMaterial</tt> defines the
+material types such as glass, or natural stones.  </p>
+
+<p>
+The <tt>dicv:QuantitativeProperty</tt> is a class that can assume quantitative values. The concept
+<tt>dicm:MaterialProperty</tt> subclass of <tt>dicv:QunatitativeProperty</tt> and is used to represents the different
+properties of materialThe <tt>dicm:MaterialProperty</tt> have 9 subclasses, which represents different kinds
+of material properties. These material properties listed as follow.
+</p>
+
+<ul>
+
+  <li><tt>dicm:MaterialChemicalProperty</tt> – the chemical properties of materials:
+   acidity concentration, alkalinity concentration, etc. </li>
+  
+  <li><tt>dicm:MaterialCombustionProperty</tt> – the material properties generated due to material
+  combustion: CO content,  N2O content, etc.</li>
+  
+  <li><tt>dicm:MaterialEnergyProperty</tt> – the energy properties of 
+  materials: olar refraction index, gas pressure, visible refraction index.</li>
+  
+  <li><tt>dicm:MaterialFuelProperty</tt> – the fuel properties of the material: carbon content,
+  lower heating value, etc.</li>
+  
+  <li><tt>dicm:MaterialHygroscopicProperty</tt> – the hygroscopic properties of the material:
+  moisture diffusivity, vapour permeability, etc.</li>
+  
+  <li><tt>dicm:MaterialMechanicalProperty</tt> – the mechanical properties of 
+  materials: young modulus, shear modulus, poisson ratio, etc.</li>
+  
+  <li><tt>dicm:MaterialOpticalProperty</tt> – the optical properties: visible transmittance, solar
+  transmittance, etc.</li>
+  
+  <li><tt>dicm:MaterialPhysicalProperty</tt> – the physical properties of materials: 
+  density, porosity, molecular weight, etc.</li>
+  
+  <li><tt>dicm:MaterialThermalProperty</tt> – the thermal properties of materials: specific heat,
+  boiling point, freezing point, etc.</li>
+  
+</ul>
+
