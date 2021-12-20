@@ -35,7 +35,7 @@ material data are also defined.
 </p>
 
 <center>
-<img src="materials-overview.png" width="60%">
+<img src="materials-overview.png" width="50%">
 </center>
 
 <p>
@@ -43,22 +43,20 @@ The classes defined in the DICM ontology are shown below.
 </p>
 
 <center>
-<img src="materials-classes.png" width="80%">
+<img src="materials-classes.png" width="70%">
 </center>
 
-<p>
-The class dice:BuildingObject is an entity that forms a part of an existing or designed
-building. This class have subclass related to the material object structure. The
-<tt>dicm:MaterialObjectStructure</tt> is a concept to represent material related information that has
-material related properties. The classes <tt>dicm:Layer</tt>, <tt>dicm:LayerSet</tt>, <tt>dicm:Profile</tt>, <tt>dicm:ProfileSet</tt>
-are the subclasses of <tt>dicm:MaterialObjectStructure</tt>. However, the primary focus is on <tt>dicm:Layer</tt>, and
-<tt>dicm:LayerSet</tt>. The <tt>dicm:Layer</tt> is a single and identifiable part of an element which is constructed
-of a number of layers (one or more) (ISO, 2018). The <tt>dicm:LayerSet</tt> is a designation by which
-materials of an element constructed of a number of material layers is known and through which the
-relative positioning of individual layers can be expressed (ISO, 2018).
-</p>
+<p> The entities of the class <tt>dice:BuildingObject</tt> represent parts of a building, and has a
+subclass related to the material object structure. The <tt>dicm:MaterialObjectStructure</tt> is a
+concept to represent material related information that has material related properties. The classes
+<tt>dicm:Layer</tt>, <tt>dicm:LayerSet</tt>, <tt>dicm:Profile</tt>, <tt>dicm:ProfileSet</tt> are the
+subclasses of <tt>dicm:MaterialObjectStructure</tt>. The primary focus is on <tt>dicm:Layer</tt>,
+and <tt>dicm:LayerSet</tt>. The <tt>dicm:Layer</tt> is a single and identifiable part of an element
+which is constructed of a number of layers (one or more). The <tt>dicm:LayerSet</tt> is a
+designation by which materials of an element constructed of a number of material layers is known and
+through which the relative positioning of individual layers can be expressed.  </p>
 
-<p> The class dice:MaterialEntity is equivalent to the BFO class 'material entity'. It has two
+<p> The class <tt>dice:MaterialEntity</tt> is equivalent to the BFO class 'material entity'. It has two
 subclasses. One is <tt>dicm:MaterialBatch</tt>, which is defined as a collection of homogeneous physical
 substance that participates in the construction project as the input of a process. Second concept is
 <tt>dicm:Material</tt>, which is used to represents homogeneous or inhomogeneous substance that can be used
@@ -71,12 +69,10 @@ polymer, or bitumen. <tt>dicm:CompositeMaterial</tt> represents the constituent 
 concrete, masonry, or reinforced concrete. <tt>dicm:InorganicNonMetallicMaterial</tt> defines the
 material types such as glass, or natural stones.  </p>
 
-<p>
-The <tt>dicv:QuantitativeProperty</tt> is a class that can assume quantitative values. The concept
-<tt>dicm:MaterialProperty</tt> subclass of <tt>dicv:QunatitativeProperty</tt> and is used to represents the different
-properties of materialThe <tt>dicm:MaterialProperty</tt> have 9 subclasses, which represents different kinds
-of material properties. These material properties listed as follow.
-</p>
+<p> The <tt>dicv:QuantitativeProperty</tt> is a class that can assume quantitative values. The
+concept <tt>dicm:MaterialProperty</tt> subclass of <tt>dicv:QunatitativeProperty</tt> and is used to
+represents the different properties of materialThe <tt>dicm:MaterialProperty</tt> have 9 subclasses,
+which represents different kinds of material properties:
 
 <ul>
 
@@ -108,4 +104,6 @@ of material properties. These material properties listed as follow.
   boiling point, freezing point, etc.</li>
   
 </ul>
+</p>
+
 

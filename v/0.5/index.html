@@ -436,22 +436,26 @@ those are
 material data are also defined.
    </p>
    <center>
-    <img src="materials-overview.png" width="70%"/>
+    <img src="materials-overview.png" width="50%"/>
    </center>
    <p>
     The classes defined in the DICM ontology are shown below.
    </p>
    <center>
-    <img src="materials-classes.png" width="80%"/>
+    <img src="materials-classes.png" width="70%"/>
    </center>
    <p>
-    The class dice:BuildingObject is an entity that forms a part of an existing or designed
-building. This class have subclass related to the material object structure. The
+    The entities of the class
+    <tt>
+     dice:BuildingObject
+    </tt>
+    represent parts of a building, and has a
+subclass related to the material object structure. The
     <tt>
      dicm:MaterialObjectStructure
     </tt>
-    is a concept to represent material related information that has
-material related properties. The classes
+    is a
+concept to represent material related information that has material related properties. The classes
     <tt>
      dicm:Layer
     </tt>
@@ -467,15 +471,17 @@ material related properties. The classes
     <tt>
      dicm:ProfileSet
     </tt>
-    are the subclasses of
+    are the
+subclasses of
     <tt>
      dicm:MaterialObjectStructure
     </tt>
-    . However, the primary focus is on
+    . The primary focus is on
     <tt>
      dicm:Layer
     </tt>
-    , and
+    ,
+and
     <tt>
      dicm:LayerSet
     </tt>
@@ -483,17 +489,21 @@ material related properties. The classes
     <tt>
      dicm:Layer
     </tt>
-    is a single and identifiable part of an element which is constructed
-of a number of layers (one or more) (ISO, 2018). The
+    is a single and identifiable part of an element
+which is constructed of a number of layers (one or more). The
     <tt>
      dicm:LayerSet
     </tt>
-    is a designation by which
-materials of an element constructed of a number of material layers is known and through which the
-relative positioning of individual layers can be expressed (ISO, 2018).
+    is a
+designation by which materials of an element constructed of a number of material layers is known and
+through which the relative positioning of individual layers can be expressed.
    </p>
    <p>
-    The class dice:MaterialEntity is equivalent to the BFO class 'material entity'. It has two
+    The class
+    <tt>
+     dice:MaterialEntity
+    </tt>
+    is equivalent to the BFO class 'material entity'. It has two
 subclasses. One is
     <tt>
      dicm:MaterialBatch
@@ -553,7 +563,8 @@ material types such as glass, or natural stones.
     <tt>
      dicv:QuantitativeProperty
     </tt>
-    is a class that can assume quantitative values. The concept
+    is a class that can assume quantitative values. The
+concept
     <tt>
      dicm:MaterialProperty
     </tt>
@@ -561,79 +572,79 @@ material types such as glass, or natural stones.
     <tt>
      dicv:QunatitativeProperty
     </tt>
-    and is used to represents the different
-properties of materialThe
+    and is used to
+represents the different properties of materialThe
     <tt>
      dicm:MaterialProperty
     </tt>
-    have 9 subclasses, which represents different kinds
-of material properties. These material properties listed as follow.
-   </p>
-   <ul>
-    <li>
-     <tt>
-      dicm:MaterialChemicalProperty
-     </tt>
-     – the chemical properties of materials:
+    have 9 subclasses,
+which represents different kinds of material properties:
+    <ul>
+     <li>
+      <tt>
+       dicm:MaterialChemicalProperty
+      </tt>
+      – the chemical properties of materials:
    acidity concentration, alkalinity concentration, etc.
-    </li>
-    <li>
-     <tt>
-      dicm:MaterialCombustionProperty
-     </tt>
-     – the material properties generated due to material
+     </li>
+     <li>
+      <tt>
+       dicm:MaterialCombustionProperty
+      </tt>
+      – the material properties generated due to material
   combustion: CO content,  N2O content, etc.
-    </li>
-    <li>
-     <tt>
-      dicm:MaterialEnergyProperty
-     </tt>
-     – the energy properties of 
+     </li>
+     <li>
+      <tt>
+       dicm:MaterialEnergyProperty
+      </tt>
+      – the energy properties of 
   materials: olar refraction index, gas pressure, visible refraction index.
-    </li>
-    <li>
-     <tt>
-      dicm:MaterialFuelProperty
-     </tt>
-     – the fuel properties of the material: carbon content,
+     </li>
+     <li>
+      <tt>
+       dicm:MaterialFuelProperty
+      </tt>
+      – the fuel properties of the material: carbon content,
   lower heating value, etc.
-    </li>
-    <li>
-     <tt>
-      dicm:MaterialHygroscopicProperty
-     </tt>
-     – the hygroscopic properties of the material:
+     </li>
+     <li>
+      <tt>
+       dicm:MaterialHygroscopicProperty
+      </tt>
+      – the hygroscopic properties of the material:
   moisture diffusivity, vapour permeability, etc.
-    </li>
-    <li>
-     <tt>
-      dicm:MaterialMechanicalProperty
-     </tt>
-     – the mechanical properties of 
+     </li>
+     <li>
+      <tt>
+       dicm:MaterialMechanicalProperty
+      </tt>
+      – the mechanical properties of 
   materials: young modulus, shear modulus, poisson ratio, etc.
-    </li>
-    <li>
-     <tt>
-      dicm:MaterialOpticalProperty
-     </tt>
-     – the optical properties: visible transmittance, solar
+     </li>
+     <li>
+      <tt>
+       dicm:MaterialOpticalProperty
+      </tt>
+      – the optical properties: visible transmittance, solar
   transmittance, etc.
-    </li>
-    <li>
-     <tt>
-      dicm:MaterialPhysicalProperty
-     </tt>
-     – the physical properties of materials: 
+     </li>
+     <li>
+      <tt>
+       dicm:MaterialPhysicalProperty
+      </tt>
+      – the physical properties of materials: 
   density, porosity, molecular weight, etc.
-    </li>
-    <li>
-     <tt>
-      dicm:MaterialThermalProperty
-     </tt>
-     – the thermal properties of materials: specific heat,
+     </li>
+     <li>
+      <tt>
+       dicm:MaterialThermalProperty
+      </tt>
+      – the thermal properties of materials: specific heat,
   boiling point, freezing point, etc.
-    </li>
-   </ul>
+     </li>
+    </ul>
+   </p>
   </section>
   <section id="classes">
    <h2>
@@ -2024,8 +2035,8 @@ of material properties. These material properties listed as follow.
        In domain of
       </th>
       <td>
-       <a href="#hasAdjacentLayer">
-        dicm:hasAdjacentLayer
+       <a href="#IsOuterLayerOf">
+        dicm:isOuterLayerOf
        </a>
        <sup class="sup-op" title="object property">
         op
@@ -2038,8 +2049,8 @@ of material properties. These material properties listed as follow.
         op
        </sup>
        <br/>
-       <a href="#IsOuterLayerOf">
-        dicm:isOuterLayerOf
+       <a href="#hasAdjacentLayer">
+        dicm:hasAdjacentLayer
        </a>
        <sup class="sup-op" title="object property">
         op
@@ -2052,15 +2063,8 @@ of material properties. These material properties listed as follow.
        In range of
       </th>
       <td>
-       <a href="#hasAdjacentLayer">
-        dicm:hasAdjacentLayer
-       </a>
-       <sup class="sup-op" title="object property">
-        op
-       </sup>
-       <br/>
-       <a href="#InnerLayer">
-        dicm:hasInnerLayer
+       <a href="#hasLayer">
+        dicm:hasLayer
        </a>
        <sup class="sup-op" title="object property">
         op
@@ -2073,8 +2077,15 @@ of material properties. These material properties listed as follow.
         op
        </sup>
        <br/>
-       <a href="#hasLayer">
-        dicm:hasLayer
+       <a href="#InnerLayer">
+        dicm:hasInnerLayer
+       </a>
+       <sup class="sup-op" title="object property">
+        op
+       </sup>
+       <br/>
+       <a href="#hasAdjacentLayer">
+        dicm:hasAdjacentLayer
        </a>
        <sup class="sup-op" title="object property">
         op
@@ -2402,15 +2413,15 @@ of material properties. These material properties listed as follow.
         c
        </sup>
        <br/>
-       <a href="#InorganicNonMetallicMaterial">
-        dicm:InorganicNonMetallicMaterial
+       <a href="#MetallicMaterial">
+        dicm:MetallicMaterial
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
        <br/>
-       <a href="#MetallicMaterial">
-        dicm:MetallicMaterial
+       <a href="#InorganicNonMetallicMaterial">
+        dicm:InorganicNonMetallicMaterial
        </a>
        <sup class="sup-c" title="class">
         c
@@ -2423,260 +2434,8 @@ of material properties. These material properties listed as follow.
        In domain of
       </th>
       <td>
-       <a href="#hasIsothermalMoistureCapacity">
-        dicm:hasIsothermalMoistureCapacity
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasCOContent">
-        dicm:hasCOContent
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasVisibleRefractionIndex">
-        dicm:hasVisibleRefractionIndex
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
        <a href="#hasCarbonContent">
         dicm:hasCarbonContent
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasThermalConductivity">
-        dicm:hasThermalConductivity
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasVaporPermeability">
-        dicm:hasVaporPermeability
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasVisibleReflectanceFront">
-        dicm:hasVisibleReflectanceFront
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasMoistureDiffusivity">
-        dicm:hasMoistureDiffusivity
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasYoungModulus">
-        dicm:hasYoungModulus
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasSpecificHeatCapacity">
-        dicm:hasSpecificHeatCapacity
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasThermalExpansionCoefficient">
-        dicm:hasThermalExpansionCoefficient
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasGasPressure">
-        dicm:hasGasPressure
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasUpperVaporResistanceFactor">
-        dicm:hasUpperVaporResistanceFactor
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasCombustionTemperature">
-        dicm:hasCombustionTemperature
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasSolarReflectanceBack">
-        dicm:hasSolarReflectanceBack
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasN20Content">
-        dicm:hasN20Content
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasDynamicViscosity">
-        dicm:hasDynamicViscosity
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasMassDensity">
-        dicm:hasMassDensity
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasPoissonRatio">
-        dicm:hasPoissonRatio
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasLowerHeatingValue">
-        dicm:hasLowerHeatingValue
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasSolarReflectanceFront">
-        dicm:hasSolarReflectanceFront
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasThermalConductivityTemperatureDerivative">
-        dicm:hasThermalConductivityTemperatureDerivative
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasHigherHeatingValue">
-        dicm:hasHigherHeatingValue
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasShearModulus">
-        dicm:hasShearModulus
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasBoilingPoint">
-        dicm:hasBoilingPoint
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasMolecularWeight">
-        dicm:hasMolecularWeight
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasFreezingPoint">
-        dicm:hasFreezingPoint
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasSpecificHeatTemperatureDerivative">
-        dicm:hasSpecificHeatTemperatureDerivative
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasThermalIrEmissivityBack">
-        dicm:hasThermalIrEmissivityBack
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasPorosity">
-        dicm:hasPorosity
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasThermalIrEmissivityFront">
-        dicm:hasThermalIrEmissivityFront
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasPHLevel">
-        dicm:hasPHLevel
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasVisibleTransmittance">
-        dicm:hasVisibleTransmittance
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasLowerVaporResistanceFactor">
-        dicm:hasLowerVaporResistanceFactor
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasSolarRefractionIndex">
-        dicm:hasSolarRefractionIndex
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasSolarTransmittance">
-        dicm:hasSolarTransmittance
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
-       <a href="#hasVisibleReflectanceBack">
-        dicm:hasVisibleReflectanceBack
        </a>
        <sup class="sup-dp" title="datatype property">
         dp
@@ -2689,8 +2448,183 @@ of material properties. These material properties listed as follow.
         dp
        </sup>
        <br/>
+       <a href="#hasGasPressure">
+        dicm:hasGasPressure
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasMolecularWeight">
+        dicm:hasMolecularWeight
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasPorosity">
+        dicm:hasPorosity
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasThermalExpansionCoefficient">
+        dicm:hasThermalExpansionCoefficient
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasThermalIrEmissivityFront">
+        dicm:hasThermalIrEmissivityFront
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasDynamicViscosity">
+        dicm:hasDynamicViscosity
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
        <a href="#hasCO2Content">
         dicm:hasCO2Content
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasThermalIrEmissivityBack">
+        dicm:hasThermalIrEmissivityBack
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasSolarReflectanceFront">
+        dicm:hasSolarReflectanceFront
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasVaporPermeability">
+        dicm:hasVaporPermeability
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasCOContent">
+        dicm:hasCOContent
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasUpperVaporResistanceFactor">
+        dicm:hasUpperVaporResistanceFactor
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasBoilingPoint">
+        dicm:hasBoilingPoint
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasFreezingPoint">
+        dicm:hasFreezingPoint
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasSolarTransmittance">
+        dicm:hasSolarTransmittance
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasThermalConductivityTemperatureDerivative">
+        dicm:hasThermalConductivityTemperatureDerivative
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasShearModulus">
+        dicm:hasShearModulus
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasVisibleRefractionIndex">
+        dicm:hasVisibleRefractionIndex
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasHigherHeatingValue">
+        dicm:hasHigherHeatingValue
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasThermalConductivity">
+        dicm:hasThermalConductivity
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasHardness">
+        dicm:hasHardness
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasMoistureDiffusivity">
+        dicm:hasMoistureDiffusivity
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasLowerHeatingValue">
+        dicm:hasLowerHeatingValue
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasMassDensity">
+        dicm:hasMassDensity
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasLowerVaporResistanceFactor">
+        dicm:hasLowerVaporResistanceFactor
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasN20Content">
+        dicm:hasN20Content
        </a>
        <sup class="sup-dp" title="datatype property">
         dp
@@ -2703,8 +2637,85 @@ of material properties. These material properties listed as follow.
         dp
        </sup>
        <br/>
-       <a href="#hasHardness">
-        dicm:hasHardness
+       <a href="#hasSpecificHeatTemperatureDerivative">
+        dicm:hasSpecificHeatTemperatureDerivative
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasPHLevel">
+        dicm:hasPHLevel
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasPoissonRatio">
+        dicm:hasPoissonRatio
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasSpecificHeatCapacity">
+        dicm:hasSpecificHeatCapacity
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasVisibleReflectanceFront">
+        dicm:hasVisibleReflectanceFront
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasCombustionTemperature">
+        dicm:hasCombustionTemperature
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasVisibleTransmittance">
+        dicm:hasVisibleTransmittance
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasYoungModulus">
+        dicm:hasYoungModulus
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasSolarReflectanceBack">
+        dicm:hasSolarReflectanceBack
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasIsothermalMoistureCapacity">
+        dicm:hasIsothermalMoistureCapacity
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasVisibleReflectanceBack">
+        dicm:hasVisibleReflectanceBack
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <br/>
+       <a href="#hasSolarRefractionIndex">
+        dicm:hasSolarRefractionIndex
        </a>
        <sup class="sup-dp" title="datatype property">
         dp
@@ -2775,18 +2786,18 @@ of material properties. These material properties listed as follow.
        In domain of
       </th>
       <td>
-       <a href="#hasAmount">
-        dicm:hasAmount
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <br/>
        <a href="#isMaterialBatchIn">
         dicm:isMaterialBatchIn
        </a>
        <sup class="sup-op" title="object property">
         op
+       </sup>
+       <br/>
+       <a href="#hasAmount">
+        dicm:hasAmount
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
        </sup>
        <br/>
       </td>
@@ -2844,8 +2855,8 @@ of material properties. These material properties listed as follow.
        Sub-classes
       </th>
       <td>
-       <a href="#Hardness">
-        dicm:Hardness
+       <a href="#PHLevel">
+        dicm:PHLevel
        </a>
        <sup class="sup-c" title="class">
         c
@@ -2865,8 +2876,8 @@ of material properties. These material properties listed as follow.
         c
        </sup>
        <br/>
-       <a href="#PHLevel">
-        dicm:PHLevel
+       <a href="#Hardness">
+        dicm:Hardness
        </a>
        <sup class="sup-c" title="class">
         c
@@ -2913,6 +2924,13 @@ of material properties. These material properties listed as follow.
        Sub-classes
       </th>
       <td>
+       <a href="#N20Content">
+        dicm:N20Content
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
        <a href="#COContent">
         dicm:COContent
        </a>
@@ -2922,13 +2940,6 @@ of material properties. These material properties listed as follow.
        <br/>
        <a href="#CO2Content">
         dicm:CO2Content
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="#N20Content">
-        dicm:N20Content
        </a>
        <sup class="sup-c" title="class">
         c
@@ -2975,8 +2986,8 @@ of material properties. These material properties listed as follow.
        Sub-classes
       </th>
       <td>
-       <a href="#ThermalConductivityTemperatureDerivative">
-        dicm:ThermalConductivityTemperatureDerivative
+       <a href="#ViscosityTemperatureDerivative">
+        dicm:ViscosityTemperatureDerivative
        </a>
        <sup class="sup-c" title="class">
         c
@@ -2989,15 +3000,15 @@ of material properties. These material properties listed as follow.
         c
        </sup>
        <br/>
-       <a href="#VisibleRefractionIndex">
-        dicm:VisibleRefractionIndex
+       <a href="#SolarRefractionIndex">
+        dicm:SolarRefractionIndex
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
        <br/>
-       <a href="#SolarRefractionIndex">
-        dicm:SolarRefractionIndex
+       <a href="#ThermalConductivityTemperatureDerivative">
+        dicm:ThermalConductivityTemperatureDerivative
        </a>
        <sup class="sup-c" title="class">
         c
@@ -3010,15 +3021,15 @@ of material properties. These material properties listed as follow.
         c
        </sup>
        <br/>
-       <a href="#ViscosityTemperatureDerivative">
-        dicm:ViscosityTemperatureDerivative
+       <a href="#MoistureCapacityThermalGradient">
+        dicm:MoistureCapacityThermalGradient
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
        <br/>
-       <a href="#MoistureCapacityThermalGradient">
-        dicm:MoistureCapacityThermalGradient
+       <a href="#VisibleRefractionIndex">
+        dicm:VisibleRefractionIndex
        </a>
        <sup class="sup-c" title="class">
         c
@@ -3072,8 +3083,8 @@ of material properties. These material properties listed as follow.
         c
        </sup>
        <br/>
-       <a href="#LowerHeatingValue">
-        dicm:LowerHeatingValue
+       <a href="#HigherHeatingValue">
+        dicm:HigherHeatingValue
        </a>
        <sup class="sup-c" title="class">
         c
@@ -3086,8 +3097,8 @@ of material properties. These material properties listed as follow.
         c
        </sup>
        <br/>
-       <a href="#HigherHeatingValue">
-        dicm:HigherHeatingValue
+       <a href="#LowerHeatingValue">
+        dicm:LowerHeatingValue
        </a>
        <sup class="sup-c" title="class">
         c
@@ -3134,15 +3145,15 @@ of material properties. These material properties listed as follow.
        Sub-classes
       </th>
       <td>
-       <a href="#MoistureDiffusivity">
-        dicm:MoistureDiffusivity
+       <a href="#LowerVaporResistanceFactor">
+        dicm:LowerVaporResistanceFactor
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
        <br/>
-       <a href="#IsothermalMoistureCapacity">
-        dicm:IsothermalMoistureCapacity
+       <a href="#UpperVaporResistanceFactor">
+        dicm:UpperVaporResistanceFactor
        </a>
        <sup class="sup-c" title="class">
         c
@@ -3155,15 +3166,15 @@ of material properties. These material properties listed as follow.
         c
        </sup>
        <br/>
-       <a href="#LowerVaporResistanceFactor">
-        dicm:LowerVaporResistanceFactor
+       <a href="#MoistureDiffusivity">
+        dicm:MoistureDiffusivity
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
        <br/>
-       <a href="#UpperVaporResistanceFactor">
-        dicm:UpperVaporResistanceFactor
+       <a href="#IsothermalMoistureCapacity">
+        dicm:IsothermalMoistureCapacity
        </a>
        <sup class="sup-c" title="class">
         c
@@ -3210,6 +3221,20 @@ of material properties. These material properties listed as follow.
        Sub-classes
       </th>
       <td>
+       <a href="#ShearModulus">
+        dicm:ShearModulus
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
+       <a href="#DynamicViscosity">
+        dicm:DynamicViscosity
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
        <a href="#ThermalExpansionCoefficient">
         dicm:ThermalExpansionCoefficient
        </a>
@@ -3226,20 +3251,6 @@ of material properties. These material properties listed as follow.
        <br/>
        <a href="#YoungModulus">
         dicm:YoungModulus
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="#ShearModulus">
-        dicm:ShearModulus
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="#DynamicViscosity">
-        dicm:DynamicViscosity
        </a>
        <sup class="sup-c" title="class">
         c
@@ -3296,15 +3307,8 @@ of material properties. These material properties listed as follow.
        Sub-classes
       </th>
       <td>
-       <a href="#Constituent">
-        dicm:Constituent
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="#LayerSet">
-        dicm:LayerSet
+       <a href="#ConstituentSet">
+        dicm:ConstituentSet
        </a>
        <sup class="sup-c" title="class">
         c
@@ -3324,15 +3328,22 @@ of material properties. These material properties listed as follow.
         c
        </sup>
        <br/>
-       <a href="#Profile">
-        dicm:Profile
+       <a href="#LayerSet">
+        dicm:LayerSet
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
        <br/>
-       <a href="#ConstituentSet">
-        dicm:ConstituentSet
+       <a href="#Constituent">
+        dicm:Constituent
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
+       <a href="#Profile">
+        dicm:Profile
        </a>
        <sup class="sup-c" title="class">
         c
@@ -3379,8 +3390,22 @@ of material properties. These material properties listed as follow.
        Sub-classes
       </th>
       <td>
-       <a href="#VisibleTransmittance">
-        dicm:VisibleTransmittance
+       <a href="#SolarReflectanceBack">
+        dicm:SolarReflectanceBack
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
+       <a href="#SolarReflectanceFront">
+        dicm:SolarReflectanceFront
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
+       <a href="#SolarTransmittance">
+        dicm:SolarTransmittance
        </a>
        <sup class="sup-c" title="class">
         c
@@ -3407,29 +3432,15 @@ of material properties. These material properties listed as follow.
         c
        </sup>
        <br/>
-       <a href="#SolarReflectanceBack">
-        dicm:SolarReflectanceBack
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="#SolarReflectanceFront">
-        dicm:SolarReflectanceFront
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="#SolarTransmittance">
-        dicm:SolarTransmittance
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
        <a href="#ThermalIrEmissivityFront">
         dicm:ThermalIrEmissivityFront
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
+       <a href="#VisibleTransmittance">
+        dicm:VisibleTransmittance
        </a>
        <sup class="sup-c" title="class">
         c
@@ -3476,13 +3487,6 @@ of material properties. These material properties listed as follow.
        Sub-classes
       </th>
       <td>
-       <a href="#MolecularWeight">
-        dicm:MolecularWeight
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
        <a href="#Porosity">
         dicm:Porosity
        </a>
@@ -3492,6 +3496,13 @@ of material properties. These material properties listed as follow.
        <br/>
        <a href="#MassDensity">
         dicm:MassDensity
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
+       <a href="#MolecularWeight">
+        dicm:MolecularWeight
        </a>
        <sup class="sup-c" title="class">
         c
@@ -3555,43 +3566,8 @@ of material properties. These material properties listed as follow.
        Sub-classes
       </th>
       <td>
-       <a href="#MaterialEnergyProperty">
-        dicm:MaterialEnergyProperty
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="#MaterialOpticalProperty">
-        dicm:MaterialOpticalProperty
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="#MaterialPhysicalProperty">
-        dicm:MaterialPhysicalProperty
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="#MaterialFuelProperty">
-        dicm:MaterialFuelProperty
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="#MaterialHygroscopicProperty">
-        dicm:MaterialHygroscopicProperty
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="#MaterialThermalProperty">
-        dicm:MaterialThermalProperty
+       <a href="#MaterialMechanicalProperty">
+        dicm:MaterialMechanicalProperty
        </a>
        <sup class="sup-c" title="class">
         c
@@ -3604,15 +3580,50 @@ of material properties. These material properties listed as follow.
         c
        </sup>
        <br/>
-       <a href="#MaterialChemicalProperty">
-        dicm:MaterialChemicalProperty
+       <a href="#MaterialThermalProperty">
+        dicm:MaterialThermalProperty
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
        <br/>
-       <a href="#MaterialMechanicalProperty">
-        dicm:MaterialMechanicalProperty
+       <a href="#MaterialFuelProperty">
+        dicm:MaterialFuelProperty
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
+       <a href="#MaterialPhysicalProperty">
+        dicm:MaterialPhysicalProperty
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
+       <a href="#MaterialEnergyProperty">
+        dicm:MaterialEnergyProperty
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
+       <a href="#MaterialHygroscopicProperty">
+        dicm:MaterialHygroscopicProperty
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
+       <a href="#MaterialOpticalProperty">
+        dicm:MaterialOpticalProperty
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
+       <a href="#MaterialChemicalProperty">
+        dicm:MaterialChemicalProperty
        </a>
        <sup class="sup-c" title="class">
         c
@@ -3659,36 +3670,8 @@ of material properties. These material properties listed as follow.
        Sub-classes
       </th>
       <td>
-       <a href="#BoilingPoint">
-        dicm:BoilingPoint
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="#ThermalTransmittance">
-        dicm:ThermalTransmittance
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="#ThermalCapacity">
-        dicm:ThermalCapacity
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="#ThermalConductivity">
-        dicm:ThermalConductivity
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="#ThermalResistivity">
-        dicm:ThermalResistivity
+       <a href="#ThermalMass">
+        dicm:ThermalMass
        </a>
        <sup class="sup-c" title="class">
         c
@@ -3701,15 +3684,43 @@ of material properties. These material properties listed as follow.
         c
        </sup>
        <br/>
-       <a href="#FreezingPoint">
-        dicm:FreezingPoint
+       <a href="#ThermalCapacity">
+        dicm:ThermalCapacity
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
        <br/>
-       <a href="#ThermalMass">
-        dicm:ThermalMass
+       <a href="#ThermalResistivity">
+        dicm:ThermalResistivity
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
+       <a href="#BoilingPoint">
+        dicm:BoilingPoint
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
+       <a href="#ThermalConductivity">
+        dicm:ThermalConductivity
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
+       <a href="#ThermalTransmittance">
+        dicm:ThermalTransmittance
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
+       <a href="#FreezingPoint">
+        dicm:FreezingPoint
        </a>
        <sup class="sup-c" title="class">
         c
